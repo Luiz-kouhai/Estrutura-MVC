@@ -1,6 +1,12 @@
 <?php
-require_once __DIR__ . '/../core/Controller.php' ;
-require_once __DIR__ . '/../model/Usuario.php' ;
+
+namespace App\controller;
+
+use App\core\Controller;
+use App\model\Usuario;
+
+// require_once __DIR__ . '/../core/Controller.php' ;
+// require_once __DIR__ . '/../model/Usuario.php' ;
 
 class HomeController extends Controller
 {

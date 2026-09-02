@@ -1,5 +1,8 @@
 <?php
 
+namespace App\core;
+
+
 class Controller 
 {
 
@@ -11,7 +14,7 @@ class Controller
 
         if(!file_exists($view_file)) 
         {
-            throw new Exception("View not found: " , $view_file) ;
+            throw new \Exception("View not found: " , $view_file) ;
         }
 
         require_once "$view_file" ;

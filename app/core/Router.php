@@ -1,6 +1,12 @@
 <?php
-require_once '../app/controller/HomeController.php' ;
-require_once '../app/controller/errors/HttpErrorController.php' ;
+
+namespace App\core;
+
+use App\controller\HomeController;
+use App\controller\errors\HttpErrorController;
+
+// require_once '../app/controller/HomeController.php' ;
+// require_once '../app/controller/errors/HttpErrorController.php' ;
 
 class Router 
 {
@@ -11,14 +17,14 @@ class Router
        $parts = $url ? explode('/', $url) : [] ;
        
        $controller_name = $parts[0] ?? 'Home' ;
-       $controller_name = ucfirst($controller_name) . 'Controller' ;
+       $controller_name = 'App\controller\\' . ucfirst($controller_name) . 'Controller' ;
       
        $action_name = $parts[1] ?? 'index' ;
 
        if(!class_exists($controller_name)) 
        {
             $controller = new HttpErrorController();
-            $controller->InternalServerError();
+            $controller->notFound();
             return ;
        }
 
@@ -27,7 +33,7 @@ class Router
        if(!method_exists($controller_name, $action_name)) 
        {
           $controller = new HttpErrorController() ;
-          $controller->NotFound() ;
+          $controller->notFound() ;
           return ;
        }
 
