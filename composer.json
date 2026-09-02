@@ -1,0 +1,11 @@
+{
+    "name": "luiz/mvc",
+    "description": "MVC Structure",
+    "authors": [
+        {
+            "name": "Luiz-kouhai",
+            "email": "luizotavioalvarenga5@gmail.com"
+        }
+    ],
+    "require": {}
+}
