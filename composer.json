@@ -1,11 +1,14 @@
 {
     "name": "luiz/mvc",
-    "description": "MVC Structure",
     "authors": [
         {
             "name": "Luiz-kouhai",
             "email": "luizotavioalvarenga5@gmail.com"
         }
     ],
+    "autoload": 
+    {
+        "psr-4": { "App\\": "app/" }
+    },
     "require": {}
 }
