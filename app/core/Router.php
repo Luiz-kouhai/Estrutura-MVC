@@ -2,7 +2,6 @@
 
 namespace App\core;
 
-use App\controller\HomeController;
 use App\controller\errors\HttpErrorController;
 
 // require_once '../app/controller/HomeController.php' ;
@@ -39,6 +38,7 @@ class Router
 
 
        $params = array_slice($parts, 2) ;
+
 
        call_user_func_array([$controller, $action_name], $params);
 
