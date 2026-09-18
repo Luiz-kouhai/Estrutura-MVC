@@ -9,7 +9,7 @@ use App\controller\errors\HttpErrorController;
 
 class Router 
 {
-    public function dispatch(mixed $url) 
+    public function dispatch(string $url): void
     
     {
        $url = trim($url, '/') ;

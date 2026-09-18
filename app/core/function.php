@@ -31,7 +31,19 @@ function dd($vars)
     echo "<br><br>" . "<strong>Arquivo: </strong>:" . $backtrace['file'] . "<br>" ;
     echo "<strong>Linha: </strong>:" . $backtrace['line'] . "<br><br>" ;
     echo "<pre>" ;
-    die('') ;
+    die() ;
+}
+
+function config(string $key, mixed $default = null): mixed  
+{
+    static $config = null;
+
+    // Só lê o arquivo do disco na primeiríssima execução
+    if ($config === null) {
+        $config = require __DIR__ . '/../config/config.php';
+    }
+
+    return $config[$key] ?? $default;
 }
 
 ?>
